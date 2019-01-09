@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		.spinner {
+		  content: "";
+		  box-sizing: border-box;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  width: 200px;
+		  height: 200px;
+		  margin-top: -100px;
+		  margin-left: -100px;
+		  border-radius: 50%;
+		  border: 16px solid #f3f3f3;
+		  border-top-color: coral;
+		  border-bottom-color: coral;
+		  
+		}
+
+		.spinner-move {
+			animation: spinner 0.7s linear infinite;
+		}
+
+		@keyframes spinner {
+		  to {
+		    transform: rotate(360deg);
+		  }
+		}
+	</style>
+
+	<title>Spinner</title>
+</head>
+<body>
+	<main>
+	  <h1>Hello Omeng!</h1>
+	  <div class="spinner"></div>
+	  <input type="button" value="Run Spinner" onclick="runSpinner()" />
+	</main>
+	<script>
+		let loading =  false;
+		
+		function runSpinner() {
+
+			if(!loading) {
+				document.querySelector(".spinner").classList.add("spinner-move");
+			}
+			else {
+				document.querySelector(".spinner").classList.remove("spinner-move");
+			}
+
+			loading = !loading;
+
+		}
+	</script>
+</body>
+</html>
